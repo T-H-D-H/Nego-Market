@@ -51,7 +51,7 @@ function Header() {
                                     <Dropdown.Item href="#">검색 옵션2</Dropdown.Item>
                                     <Dropdown.Item href="#">검색 옵션3</Dropdown.Item>
                                     <Dropdown.Divider />
-                                    <Dropdown.Item href="#">다른 검색 옵션d4</Dropdown.Item>
+                                    <Dropdown.Item href="#">다른 검색 옵션4</Dropdown.Item>
                                 </DropdownButton>
                             </div>
 
