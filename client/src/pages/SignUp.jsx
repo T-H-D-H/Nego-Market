@@ -51,7 +51,7 @@ export default function SignUp() {
     
 
     return <>
-        <NavigationBar></NavigationBar>
+        <NavigationBar> </NavigationBar>
         <div className="contents">
         <div className="formDiv">
         <input placeholder="이메일" className="inputs" onBlur={emailCheck} onChange={(e)=>{setEmail(e.target.value)}}/>
