@@ -1,3 +1,30 @@
-* {
-    background-color: goldenrod;
+
+.contents{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 50px 20px 50px 20px;
+    background-color: beige;
+    border-radius: 20px;
+}
+
+.inputs{
+    margin: 5px 10px 0px 0px;
+    
+}
+
+/* 에러 메세지=b태그 */
+b{
+    color: red;
+}
+
+.formDiv button{
+    border-radius: 7px;
+    font-family: 'Dongle', sans-serif;
+    font-size: 20px;
+    color: black;
+    background-color: chocolate;
+    border: 0ch;
 }

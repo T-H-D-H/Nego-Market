@@ -34,9 +34,11 @@ function Header() {
                 <Navbar.Brand href="/">
                     <img src="dogeCoin.com.png" width="100" height="80" />
                 </Navbar.Brand>
-
+                
                 <Navbar.Toggle className="justify-content-end" />
+                
                 <Navbar.Collapse className="justify-content-end">
+                <div className='justify-content-left'><h2>땅큰마켓</h2></div>
                     <Nav className="justify-content-end mx-5">
                         <InputGroup className="mb-3">
                             <Form.Control aria-label="Text input with dropdown button" />
