@@ -9,6 +9,7 @@ import { useState } from "react";
 // 회원가입시 중복확인 버튼 등 버튼 자체를 없앰.
 // 비밀번호 : 8 ~ 16 특수문자 1개 이상, 영어로만(영어 대소문자 구분함) 
 export default function SignUp() {
+    const port = process.env.REACT_APP_PORT
     // 인풋 값들 상태 관리
     const [nickName, setNickName] = useState("");
     const [name, setName] = useState("");
@@ -34,7 +35,7 @@ export default function SignUp() {
         const data = JSON.stringify({
             nickname:nickName
         })
-        const res = await fetch(`http://localhost:5000/api/user/nickname-duplication-check`, {
+        const res = await fetch(port+`/api/user/nickname-duplication-check`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -112,7 +113,7 @@ export default function SignUp() {
         const data = JSON.stringify({
             email:email
         })
-        const res = await fetch(`http://localhost:5000/api/user/id-duplication-check`, {
+        const res = await fetch(port+`/api/user/id-duplication-check`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -150,7 +151,7 @@ export default function SignUp() {
 
         const data = JSON.stringify(userInput)
         
-        const res = await fetch(`http://localhost:5000/api/user/register`, {
+        const res = await fetch(port+`/api/user/register`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
