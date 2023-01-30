@@ -87,7 +87,7 @@ export default function SignUp() {
 
     // 비밀번호 확인
     const pwCheck = () => {
-        const reg = /^(?=.*[!@#\$%\^&\*])(?=.*[A-Z])(?=.*[a-z])[A-Za-z\d!@#\$%\^&\*]{8,16}$/i
+        const reg = /^(?=.*[!@#\$%\^&\*])(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])[A-Za-z\d!@#\$%\^&\*]{8,16}$/i
         if(!reg.test(pw)){
             setPwErrMsg("비밀번호가 잘못되었다는 메세지");
         }else{
