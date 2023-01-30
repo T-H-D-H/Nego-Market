@@ -1,0 +1,9 @@
+.content {
+    display: block;
+    background-color: brown;
+}
+
+button{
+    border: 1px;
+    border-radius: 50%;
+}
