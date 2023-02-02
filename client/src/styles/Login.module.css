@@ -1,0 +1,50 @@
+/* 로그인 모든 요소 중앙 정렬 */
+.center {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 70px;
+}
+
+.img{
+    height: 98px;
+}
+
+.name{
+    font-family: Inter;
+    display: inline;
+    font-size: 80px;
+    margin-left: 20px;
+}
+
+.input{
+    border: none;
+    background-color: #D9D9D9;
+    width: 653px;
+    height: 134px;
+    margin-bottom: 46px;
+    font-size: 65px;
+}
+
+.loginBtn{
+    background-color: black;
+    font-size: 44px;
+    color: white;
+    width: 654px;
+    height: 75px;
+    margin-bottom: 40px;
+}
+
+.text{
+    font-size: 22px;
+}
+
+.no_a_line{
+    color: black;
+    text-decoration: none;
+}

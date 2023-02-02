@@ -1,9 +1,11 @@
 .content {
     display: block;
+    width: 600px;
+    margin: 0 auto;
     background-color: brown;
 }
 
-button{
-    border: 1px;
+.button{
+    border: 1px solid yellow;
     border-radius: 50%;
 }

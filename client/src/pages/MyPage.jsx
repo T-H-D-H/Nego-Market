@@ -1,5 +1,5 @@
 import NavigationBar from "../components/Navigation";
-import '../styles/MyPage.css'
+import style from './../styles/MyPage.module.css'
 import { useState } from "react";
 
 export default function MyPage(user) {
@@ -22,7 +22,7 @@ export default function MyPage(user) {
 
     return <>
         <NavigationBar></NavigationBar>
-        <div className="contents">
+        <div className={style.content}>
             <div className="content">
                 <div className="itemName">이름</div>
                 <div className="itemContent">name</div>
@@ -50,7 +50,7 @@ export default function MyPage(user) {
             <div className="content">
                 <div className="itemName">주소</div>
                 <div className="itemContent">location</div>
-                <button>수정</button>
+                <button className={style.button}>수정</button>
             </div>
         </div>
         <div className="delete">
