@@ -35,7 +35,7 @@ export default function Login() {
               window.location.href="/"
               console.log(token)
         }catch(err){
-           alert("일치하는 회원이 없습니다. 다시 확인해주세요.")
+           alert("아이디 또는 비밀번호가 잘못되었습니다. 다시 확인해주세요")
         }
         
     }
