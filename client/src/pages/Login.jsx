@@ -40,17 +40,17 @@ export default function Login() {
 
     return <div className={style.center}>
         <div className={style.logo}>
-            <img src="dogeCoin.com.png" alt="로고 사진" className={style.img} />
+            {/* <img src="dogeCoin.com.png" alt="로고 사진" className={style.img} /> */}
             <h1 className={style.name}>NEGO JANGTEO</h1>
         </div>
 
-        <div className="inputs">
-            <input className={style.input} placeholder=" 이메일" type="text" onChange={(e) => { setId(e.target.value) }} />
+        <div className={style.inputs}>
+            <input className={style.input} placeholder=" 아이디(이메일)" type="text" onChange={(e) => { setId(e.target.value) }} />
             <br />
             <input className={style.input} placeholder=" 비밀번호" type="password" onChange={(e) => { setPw(e.target.value) }} />
             <br />
             <input className={style.loginBtn} type="button" value="로그인" onClick={userLogin} />
-            <p className={style.text}>아이디 비밀번호 찾기 / <a className={style.no_a_line} href="/signup">회원가입</a> </p>
+            <p className={style.text}> <a className={style.no_a_line} href="/signup">회원가입</a> </p>
             {/* TODO: 비밀번호 나 아이디 찾기 페이지 완료시 이동하는 태그 넣기 */}
         </div>
 
