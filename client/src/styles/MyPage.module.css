@@ -1,11 +1,71 @@
-.content {
+.contents {
     display: block;
-    width: 600px;
+    width: 1228px;
     margin: 0 auto;
-    background-color: brown;
+}
+
+.content{
+    display: flex;
+    height: 94px;
+    font-size: 25px;
+    border-bottom: 1px solid #f1f1f1;
+    align-items: center;
+}
+.content>span{
+    display: inline-block;
+    margin-right: 30px;
+    width: 200px
+}
+
+.content>div{
+    width: 500px;
+    padding: 1px 2px ;
+    border:none;
+    font-weight: bold;
+}
+/* 지역 글자 크기 */
+.content:last-child>div{
+    font-size: 30px;
+}
+.content>input{
+    width: 500px;
+    background-color: white;
+    border: none;
+    
+}
+.buttoncontents{
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height: 94px;
+    font-size: 20px;
+}
+.buttoncontents>span{
+    margin-left: 10px;
+    color: red;
+    font-size: 15px;
+}
+.buttoncontents>button{
+    margin-left: 50px;
+    width: 147px;
+    border: 1px solid #f1f1f1;
+    font-size: 20px;
+    background-color: white;
+    padding: 11px 0 ;
+}
+.content:last-child{
+    border-bottom: none;
 }
 
 .button{
     border: 1px solid yellow;
     border-radius: 50%;
 }
+
+.title{
+    font-size: 50px;
+   border-bottom : 5px solid black;
+   padding-bottom: 20px;
+   margin-top: 60px;
+}
+

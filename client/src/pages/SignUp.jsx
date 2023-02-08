@@ -164,8 +164,7 @@ export default function SignUp() {
             window.location.href = "/"
           }else{
             registerCheck();
-          }
-        
+          }        
     }
 
     return <>

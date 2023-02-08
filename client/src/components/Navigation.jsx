@@ -62,12 +62,12 @@ function Header() {
                         {haveToken === null ? (
                             <>
                                 <LinkStyle to="/login">Login</LinkStyle>
-                                <LinkStyle to="/Signup">Sign up</LinkStyle>
+                                <LinkStyle to="/signup">Sign up</LinkStyle>
                             </>
                         ) : null}
                         {role === 'user' ? (
                             <>
-                                <LinkStyle to="/myPage">My page</LinkStyle>
+                                <LinkStyle to="/mypage">My page</LinkStyle>
                             </>
                         ) : null}
                         {role === 'owner' ? (
@@ -82,7 +82,7 @@ function Header() {
                         ) : null}
                         {role === 'admin' ? (
                             <>
-                                <LinkStyle ClassName="mx-4" to="/myPage">
+                                <LinkStyle ClassName="mx-4" to="/mypage">
                                     myPage
                                 </LinkStyle>
                                 <LinkStyle ClassName="mx-4" to="/adminPage">
