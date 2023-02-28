@@ -35,7 +35,7 @@ function Header() {
                 <Navbar.Toggle className="justify-content-end" />
                 
                 <Navbar.Collapse className="justify-content-end">
-                <div className='justify-content-left'><h2>땅큰마켓</h2></div>
+                <div className='justify-content-left'><h2>네고 장터</h2></div>
                     <Nav className="justify-content-end mx-5">
                         <InputGroup className="mb-3">
                             <Form.Control aria-label="Text input with dropdown button" />

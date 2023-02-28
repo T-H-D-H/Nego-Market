@@ -1,0 +1,114 @@
+.formContent {
+   display: block;
+   margin: 62px auto;
+   width: 820px;
+   height: 1260px;
+   background-color: #D9D9D9;
+   border-radius: 10px;
+}
+
+.imageIcon{
+width: 145px;
+height: 120px;
+cursor: pointer;
+}
+
+.imageIconDiv{
+   padding: 71px 0px 71px 80px;
+   border-bottom: #000000 solid 1px;
+}
+
+.imageIconDiv input {
+   visibility: hidden;
+}
+.titleDiv{
+   padding: 25px 0px 25px 50px;
+   font-size: 64px;
+   border-bottom: #000000 solid 1px;
+}
+
+.titleDiv input::placeholder{
+   color:#000000
+}
+
+.titleDiv input{
+   border: none;
+   background-color: inherit;
+}
+.tagDiv{
+   padding : 19px 0px 19px 50px;
+   font-size: 20px;
+   color: grey;
+   border-bottom: #000000 solid 1px;
+}
+
+.tagDiv input {
+   border: none;
+   background-color: inherit;
+   width: 760px;
+}
+
+.priceDiv{
+   padding : 19px 0px 19px 50px;
+   font-size: 40px;
+   color: grey;
+   border-bottom: #000000 solid 1px;
+}
+.priceDiv input{
+   border: none;
+   background-color: inherit;
+   margin-right: 10px;
+}
+
+.priceDiv label{
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+}
+
+.articleDiv{
+   padding: 30px 0px 0px 50px;
+   height: 500px;
+   font-size: 40px;
+   color: grey;
+}
+
+.articleDiv textarea{
+   width: 720px;
+   height: 85%;
+   font-size: small;
+   resize: none;
+   background-color: inherit;
+   border: none;
+}
+
+.articleDiv textarea::placeholder{
+   font-size: 40px;
+}
+
+.button {
+   background-color: #5B5858;
+   width: 587px;
+   height: 82px;
+   margin: auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 10px;
+   font-weight: bold;
+   font-size: 40px;
+   cursor: pointer;
+}
+
+.buttonDiv{
+   margin-bottom: 50px;
+}
+.buttonDiv label {
+   display: block;
+}
+.buttonDiv input{
+   display: none;
+   
+}
+
