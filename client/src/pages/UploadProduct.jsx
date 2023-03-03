@@ -3,6 +3,7 @@ import style from "./../styles/UploadProduct.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImages } from "@fortawesome/free-solid-svg-icons";
 export default function UploadProduct() {
+	// TODO: jpg, jpeg, png파일만 들어오게
 	return (
 		<div>
 			<NavigationBar></NavigationBar>
