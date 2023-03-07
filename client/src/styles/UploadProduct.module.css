@@ -38,15 +38,14 @@ input::-webkit-inner-spin-button {
 .formTitle{
    font-size: 24px;
    font-weight: bold;
-   margin: 13px auto 22px auto;
+   margin: 22px auto 11px auto;
 }
 .formTitle:first-child{
-   margin: 0px auto 22px
+   margin: 0px auto 11px
 }
 /* 마우스 오버시 화살표로 바뀜 */
 .label{
    cursor: pointer;
-   width: 100%;
 }
 
 /* textarea */
@@ -68,6 +67,7 @@ textarea:focus{
    height: 80px;
    display: inline;
    color: gray;
+   margin-right: 10px;
 }
 
 .imageDiv{
@@ -75,13 +75,11 @@ textarea:focus{
    border-radius: 10pt;
    padding: 10pt;
    display: flex;
-   /* justify-content: center; */
    align-items: center;
 }
 
 .imageMessage{
-   margin-left: 10px;
-   display: inline-block;
+   display: block;
    word-wrap: break-word;
    color: darkgray;
 }
@@ -91,14 +89,17 @@ textarea:focus{
    width: 120px;
    height: 120px;
    display: inline;
+   border-radius: 10px;
 }
 
-
+.showImageContainer{
+   display: inline;
+}
 
 /* 버튼 */
 .button {
    float: right;
-   margin: 41px;
+   margin: 41px auto;
    width: 219px;
    height: 48px;
    font-size: 24px;
@@ -111,9 +112,13 @@ textarea:focus{
 
 /* 미리보기 이미지 */
 .imageContainer{
-   width: calc(20%);
    display: inline-flex;
+   margin-left:40px;
 }
+
+/* .showImageContainer :first-child{
+   margin-left: 30px;
+} */
 /* 이미지 삭제 버튼 */
 .deleteImage{
    position: relative;
@@ -121,99 +126,7 @@ textarea:focus{
    right: 0;
    width:16px;
    height:16px;
+   cursor: pointer;
+   margin:0px 5px
 }
 /* ----------- */
-
-.imageIcon{
-width: 145px;
-height: 120px;
-cursor: pointer;
-}
-
-.imageIconDiv{
-   padding: 71px 0px 71px 80px;
-   border-bottom: #000000 solid 1px;
-}
-
-.imageIconDiv input {
-   visibility: hidden;
-}
-.titleDiv{
-   padding: 25px 0px 25px 50px;
-   font-size: 64px;
-   border-bottom: #000000 solid 1px;
-}
-
-.titleDiv input::placeholder{
-   color:#000000
-}
-
-.titleDiv input{
-   border: none;
-   background-color: inherit;
-}
-.tagDiv{
-   padding : 19px 0px 19px 50px;
-   font-size: 20px;
-   color: grey;
-   border-bottom: #000000 solid 1px;
-}
-
-.tagDiv input {
-   border: none;
-   background-color: inherit;
-   width: 760px;
-}
-
-.priceDiv{
-   padding : 19px 0px 19px 50px;
-   font-size: 40px;
-   color: grey;
-   border-bottom: #000000 solid 1px;
-}
-.priceDiv input{
-   border: none;
-   background-color: inherit;
-   margin-right: 10px;
-}
-
-.priceDiv label{
-   display: inline-flex;
-   justify-content: center;
-   align-items: center;
-   cursor: pointer;
-}
-
-.articleDiv{
-   padding: 30px 0px 0px 50px;
-   height: 500px;
-   font-size: 40px;
-   color: grey;
-}
-
-.articleDiv textarea{
-   width: 720px;
-   height: 85%;
-   font-size: small;
-   resize: none;
-   background-color: inherit;
-   border: none;
-}
-
-.articleDiv textarea::placeholder{
-   font-size: 40px;
-}
-
-
-
-.buttonDiv{
-   margin-bottom: 50px;
-}
-.buttonDiv label {
-   display: block;
-}
-.buttonDiv input{
-   display: none;
-   
-}
-
