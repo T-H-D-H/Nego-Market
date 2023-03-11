@@ -62,6 +62,9 @@ export default function Home() {
 		<div>
 			<NavigationBar></NavigationBar>
 			<div className={style.mainTitle}>지역의 인기매물</div>
+			
+
+			<div className={style.content}>
 			<div className={style.selectLocation}>
 				<span>인기 매물 </span>
 				<div className={style.select}>
@@ -130,8 +133,6 @@ export default function Home() {
 					</select>
 				</div>
 			</div>
-
-			<div className={style.content}>
 				{mainContent.map((content) => {
 					return (
 						<article className={style.product} key={content.title}>
