@@ -29,7 +29,8 @@ function Header() {
         <Navbar bg="light" expand="lg">
             <Container>
                 <Navbar.Brand href="/">
-                    <img src="dogeCoin.com.png" width="100" height="80" />
+                
+                    <img src={process.env.PUBLIC_URL + '/dogeCoin.com.png'} width="100" height="80" />
                 </Navbar.Brand>
                 
                 <Navbar.Toggle className="justify-content-end" />

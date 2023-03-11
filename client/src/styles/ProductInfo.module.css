@@ -1,0 +1,24 @@
+.align_main_center{
+    background-color: bisque;
+    width: 725px;
+    margin: 50px auto;
+}
+
+/* 사진 관련 부분  */
+.picDiv{
+text-align: center;
+padding: 30px ;
+}
+.picImg{
+    border-radius: 10px;
+    width: 500px;
+    height: 500px;
+}
+
+.arrowIcon{
+    cursor: pointer;
+    width: 26px;
+    height: 26px;
+    margin: auto 15px;
+}
+/* --------사진 관련 부분--------  */

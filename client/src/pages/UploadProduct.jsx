@@ -73,11 +73,18 @@ export default function UploadProduct() {
 		const res = await fetch(port + "/api/product", {
 			method: "POST",
 			headers: {
-				// "Content-Type": "multipart/form-data",
 				Authorization: "Bearer " + token,
 			},
 			body: formDatas,
 		});
+
+		if (res.status != 201) {
+			console.log(res);
+			alert("등록에 실패 했습니다. 다시 확인해주세요.");
+		} else if (res.status == 201) {
+			alert("등록에 성공했습니다.");
+			window.location.reload();
+		}
 	};
 
 	return (
@@ -136,40 +143,52 @@ export default function UploadProduct() {
 							className={style.icon}
 						/>
 					</label>
-					{
-						image.length==0?<div className={style.imageMessage}>
-						상품 소개를 위한 사진을 넣어주세요. 사진은 JPG, JPEG PNG
-						파일만 넣을 수 있습니다!(최대 10mb크기의 사진만
-						가능합니다.)
-					</div>:<></>
-					}
-					
-					<div className={style.showImageContainer}>
-					{image.length>=1?showImages.map(
-						(image, id) => (
-							console.log(showImages.length),
-							(
-								<div className={style.imageContainer} key={id}>
-									<img src={image} alt={`${image}-${id}`} />
-									{/* <Delete onClick={() => handleDeleteImage(id)} /> */}
-									<FontAwesomeIcon
-										icon={faCircleXmark}
-										className={style.deleteImage}
-										onClick={() => handleDeleteImage(id)}
-									/>
-								</div>
-							)
-						)
-					):<></>}
-				</div>
-				</div>
+					{image.length == 0 ? (
+						<div className={style.imageMessage}>
+							상품 소개를 위한 사진을 넣어주세요. 사진은 JPG, JPEG
+							PNG 파일만 넣을 수 있습니다!(최대 10mb크기의 사진만
+							가능합니다.)
+						</div>
+					) : (
+						<></>
+					)}
 
-				
+					<div className={style.showImageContainer}>
+						{image.length >= 1 ? (
+							showImages.map(
+								(image, id) => (
+									console.log(showImages.length),
+									(
+										<div
+											className={style.imageContainer}
+											key={id}
+										>
+											<img
+												src={image}
+												alt={`${image}-${id}`}
+											/>
+											{/* <Delete onClick={() => handleDeleteImage(id)} /> */}
+											<FontAwesomeIcon
+												icon={faCircleXmark}
+												className={style.deleteImage}
+												onClick={() =>
+													handleDeleteImage(id)
+												}
+											/>
+										</div>
+									)
+								)
+							)
+						) : (
+							<></>
+						)}
+					</div>
+				</div>
 
 				<div className={style.formTitle}>태그</div>
 				<input
 					type="text"
-					placeholder="태그는 띄워쓰기로 구분됩니다. 작성시 주의해 주세요."
+					placeholder="태그는 필수 항목입니다. 그리고 띄워쓰기로 구분됩니다. 작성시 주의해 주세요."
 					onChange={(e) => {
 						setProductTag(e.target.value);
 					}}

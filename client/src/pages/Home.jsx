@@ -2,6 +2,7 @@ import NavigationBar from "../components/Navigation";
 import style from "./../styles/Home.module.css";
 import mainContent from "./mainContents.json";
 import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 
 export default function Home() {
 	const port = process.env.REACT_APP_PORT;
@@ -136,7 +137,7 @@ export default function Home() {
 				{mainContent.map((content) => {
 					return (
 						<article className={style.product} key={content.title}>
-							<a href="" className={style.product_link}>
+							<Link to={`/product/${content.id}`}  className={style.product_link}>
 								<div className={style.product_img}>
 									<img
 										src={content.img}
@@ -159,7 +160,7 @@ export default function Home() {
 										<span>채팅 {content.chat}</span>
 									</div>
 								</div>
-							</a>
+							</Link>
 						</article>
 					);
 				})}
