@@ -1,0 +1,132 @@
+.title{
+   font-size: 50px;
+   font-weight: bold;
+   margin: 61px auto 44px;
+   text-align: center;
+}
+
+
+/* 전체 입력 태그들을 감싼 태그 */
+.formContent {
+   width: 693px;
+   margin: 0px auto;
+}
+
+
+/* ------------------- 입력 영역 관련 태그 --------------*/
+input:hover{
+   border-color: deepskyblue;
+}
+/* 모든 인풋들은 둥근 모서리와 하얀테두리를 가짐 */
+input{
+   padding: 8px;
+   border: 1px solid #D9D9D9;
+   border-radius: 10px;
+   width: 100%;
+   height: 65px;
+}
+/* chrome에서 input:number 의 화살표 없애줌 */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+/* 파일을 넣는 input은 label을 활용할거기 때문에 모습은 감쳐준다. */
+.fileInput{
+   display: none;
+}
+/* 인풋 값 위의 카테고리 제목 */
+.formTitle{
+   font-size: 24px;
+   font-weight: bold;
+   margin: 22px auto 11px auto;
+}
+.formTitle:first-child{
+   margin: 0px auto 11px
+}
+/* 마우스 오버시 화살표로 바뀜 */
+.label{
+   cursor: pointer;
+}
+
+/* textarea */
+.articleContent{
+   width: 100%;
+   border: 1px solid #D9D9D9;
+   padding: 8px;
+   border-radius: 10px;
+}
+
+/* 작성 칸 포커스시 테두리 색깔 변경 */
+textarea:focus{
+   border: 1px solid deepskyblue;
+}
+
+/* 아이콘 크기*/
+.icon{
+   width: 80px;
+   height: 80px;
+   display: inline;
+   color: gray;
+   margin-right: 10px;
+}
+
+.imageDiv{
+   border: 4pt darkgray dashed;
+   border-radius: 10pt;
+   padding: 10pt;
+   display: flex;
+   align-items: center;
+}
+
+.imageMessage{
+   display: block;
+   word-wrap: break-word;
+   color: darkgray;
+}
+/* -----------------------------입력 관련---------------------------------------- */
+
+.imageContainer img{
+   width: 120px;
+   height: 120px;
+   display: inline;
+   border-radius: 10px;
+}
+
+.showImageContainer{
+   display: inline;
+}
+
+/* 버튼 */
+.button {
+   float: right;
+   margin: 41px auto;
+   width: 219px;
+   height: 48px;
+   font-size: 24px;
+   font-weight: bold;
+   cursor: pointer;
+   background-color: #D9D9D9;
+   border: none;
+   border-radius: 10px;
+}
+
+/* 미리보기 이미지 */
+.imageContainer{
+   display: inline-flex;
+   margin-left:40px;
+}
+
+/* .showImageContainer :first-child{
+   margin-left: 30px;
+} */
+/* 이미지 삭제 버튼 */
+.deleteImage{
+   position: relative;
+   top: 0;
+   right: 0;
+   width:16px;
+   height:16px;
+   cursor: pointer;
+   margin:0px 5px
+}
+/* ----------- */
