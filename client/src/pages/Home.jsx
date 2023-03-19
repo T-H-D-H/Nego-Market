@@ -1,6 +1,5 @@
 import NavigationBar from "../components/Navigation";
 import style from "./../styles/Home.module.css";
-// import mainContent from "./mainContents.json";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -15,13 +14,6 @@ export default function Home() {
 		// 로그인 안했을때 , 했을때
 		const token = JSON.parse(sessionStorage.getItem("token"));
 
-		// const url = "";
-
-		// if (token) {
-		// 	url = "/api/products/my-address";
-		// } else {
-		// 	url = "/api/products";
-		// }
 		let res = [];
 		token?
 		 res = await fetch(port + "/api/products/my-address", {
@@ -34,7 +26,6 @@ export default function Home() {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",
-				// Authorization: "Bearer " + token,
 			},
 		})
 		const result = await res.json();
