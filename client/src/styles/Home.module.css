@@ -12,6 +12,7 @@
 
 .selectLocation{
     margin: 0 auto;
+    margin-bottom: 15px;
     font-size: 30px;
     width: 1500px;
     padding-right: 44px;
@@ -30,7 +31,7 @@
     font-size: 17px;
     letter-spacing: -0.6px;
     text-align: left;
-    background: #fff url(https://d1unjqcospf8gs.cloudfront.net/assets/home/articles/icon-arrow-down-ea33c4b….svg) no-repeat 89% 50%;
+    background: #fff  no-repeat 89% 50%;
     border: solid 1px #e9ecef;
 }
 
@@ -42,10 +43,8 @@
 
 .content{
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    /* width: 100%;
-    margin: 0 auto; */
     width: 75%;
     margin: 15px auto auto auto;
 
