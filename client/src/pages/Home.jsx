@@ -1,10 +1,28 @@
 import NavigationBar from "../components/Navigation";
 import style from "./../styles/Home.module.css";
-import mainContent from "./mainContents.json";
+// import mainContent from "./mainContents.json";
 import { useState, useEffect } from "react";
 
 export default function Home() {
 	const port = process.env.REACT_APP_PORT;
+	const [mainContent,setMainContent] =useState();
+	const loadMainContent = async ()=>{
+		// 메인 콘텐츠들을 배열 형태로 가져오는 것.
+		// 로그인 안했을때 
+		const res = await fetch(port + "/api/products",{
+			method:"GET",
+			headers:{
+				"Content-Type": "application/json",
+			}
+		});
+		const result = await res.json();
+
+		setMainContent(result);
+	}
+
+	useEffect(()=>{
+		loadMainContent();
+	},[mainContent])
 
 	const [getData, setGetData] = useState();
 	const regionLoad = async () => {
@@ -133,9 +151,9 @@ export default function Home() {
 					</select>
 				</div>
 			</div>
-				{mainContent.map((content) => {
+				{mainContent?mainContent.map((content) => {
 					return (
-						<article className={style.product} key={content.title}>
+						<article className={style.product} key={content.id}>
 							<a href="" className={style.product_link}>
 								<div className={style.product_img}>
 									<img
@@ -162,7 +180,7 @@ export default function Home() {
 							</a>
 						</article>
 					);
-				})}
+				}):<></>}
 			</div>
 		</div>
 	);
