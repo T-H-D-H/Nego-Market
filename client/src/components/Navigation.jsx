@@ -30,15 +30,16 @@ function Header() {
             <Container>
                 <Navbar.Brand href="/">
                 
-                    <img src={process.env.PUBLIC_URL + '/dogeCoin.com.png'} width="100" height="80" />
+                    {/* <img src={process.env.PUBLIC_URL + '/dogeCoin.com.png'} width="100" height="80" /> */}
+                    <h2>NEGO JANGTEO</h2>
                 </Navbar.Brand>
                 
                 <Navbar.Toggle className="justify-content-end" />
                 
                 <Navbar.Collapse className="justify-content-end">
-                <div className='justify-content-left'><h2>네고 장터</h2></div>
+                <div className='justify-content-left'></div>
                     <Nav className="justify-content-end mx-5">
-                        <InputGroup className="mb-3">
+                        {/* <InputGroup className="mb-3">
                             <Form.Control aria-label="Text input with dropdown button" />
                             <div style={divstyle}>
                                 <DropdownButton
@@ -55,42 +56,21 @@ function Header() {
                                 </DropdownButton>
                             </div>
 
-                        </InputGroup>
-                        <LinkStyle to="/">Home</LinkStyle>
+                        </InputGroup> */}
                         {haveToken === null ? (
                             <>
-                                <LinkStyle to="/login">Login</LinkStyle>
+                                <LinkStyle to="/login">Login</LinkStyle> 
                                 <LinkStyle to="/signup">Sign up</LinkStyle>
                             </>
-                        ) : null}
-                        {role === 'user' ? (
-                            <>
-                                <LinkStyle to="/mypage">My page</LinkStyle>
-                            </>
-                        ) : null}
-                        {role === 'owner' ? (
-                            <>
-                                <LinkStyle to="/ownerPage">owner page</LinkStyle>
-                            </>
-                        ) : null}
-                        {role === 'admin' ? (
-                            <>
-                                <LinkStyle to="/adminPage">admin page</LinkStyle>
-                            </>
-                        ) : null}
-                        {role === 'admin' ? (
-                            <>
-                                <LinkStyle ClassName="mx-4" to="/mypage">
-                                    myPage
-                                </LinkStyle>
-                                <LinkStyle ClassName="mx-4" to="/adminPage">
-                                    admin
-                                </LinkStyle>
-                            </>
-                        ) : null}
-                        {role === 'admin' ? (
-                            <LinkStyle to="/admin">Admin page</LinkStyle>
-                        ) : null}
+                        ) : <>
+                        <LinkStyle to="/mypage">마이 페이지</LinkStyle> 
+                        <LinkStyle to="/upload">상품 등록</LinkStyle>
+                        <LinkStyle onClick={()=>{
+                            sessionStorage.removeItem('token');
+                            window.location.reload();
+                        }}>로그아웃</LinkStyle>
+                    </>}
+                        
                     </Nav>
                 </Navbar.Collapse>
             </Container>
@@ -101,11 +81,11 @@ function Header() {
 export default Header;
 
 const LinkStyle = styled(Link)`
-  marginRight: 2rem;
+  margin-right: 2rem;
   text-decoration: none;
-  color: #7d4e97;
+  color: gray;
   &:hover {
-    color: #d29cef;
+    color: black;
   }
 `;
 
