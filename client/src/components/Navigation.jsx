@@ -19,7 +19,6 @@ function Header() {
         setToken(sessionStorage.getItem('token'));
         if (haveToken !== null) {
             setRole(JSON.parse(sessionStorage.getItem('role')));
-            console.log(role);
         } else {
             setRole('');
         }

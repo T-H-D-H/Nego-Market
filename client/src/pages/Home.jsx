@@ -137,7 +137,7 @@ export default function Home() {
 					<span>인기 매물 </span>
 					<div className={style.select}>
 						<select
-							onChange={async(e) => {
+							onChange={(e) => {
 								setSi(e.target.value);
 								setDongData("");
 								loadGuData(e.target.value);
