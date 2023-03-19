@@ -45,7 +45,6 @@ export default function Home() {
 	const setMainContentByAddress = async (region,selectedRegion) => {
 		if (region=="dong") {
 			// 동으로 선택된게 있을때
-			console.log("동을 선택했을때",si,gu,dong)
 			const res = await fetch(
 				port + "/api/products/" + si + "/" + gu + "/" + selectedRegion,
 				{
@@ -59,7 +58,6 @@ export default function Home() {
 			setMainContent(result);
 		}else if(region=="gu"){
 			// 구로 선택된게 있을때
-			console.log("구를 선택했을때",si,gu)
 			const res = await fetch(
 				port + "/api/products/" + si + "/" + selectedRegion ,
 				{
@@ -73,7 +71,6 @@ export default function Home() {
 			setMainContent(result);
 		}else if(region=="si"){
 			// 시로 선택된게 있을때
-			console.log("시을 선택했을때",si)
 			const res = await fetch(
 				port + "/api/products/" + selectedRegion ,
 				{
@@ -84,7 +81,6 @@ export default function Home() {
 				}
 			);
 			const result = await res.json();
-			console.log("시에 선택 됬을때 : ",result)
 			setMainContent(result);
 		}
 	};
@@ -155,7 +151,6 @@ export default function Home() {
 								setDongData("");
 								loadGuData(e.target.value);
 								setMainContentByAddress("si",e.target.value);
-								console.log("시 바꿧을때")
 							}}
 							value={si}
 						>
