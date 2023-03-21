@@ -1,0 +1,75 @@
+
+.logo{
+    width: 313px;
+    font-size: 40px;
+    margin: 36px auto auto auto;
+}
+
+.formTag{
+    width: 754px;
+    margin: 18px auto;
+}
+
+.categoryTag{
+    width: 100%;
+    font-size: 32px;
+    margin-bottom: 18px;
+}
+
+.categoryTag span{
+    margin-left: 12.05px;
+    line-height: 32px;
+}
+
+.categoryTag_input{
+    width: 100%;
+    height: 50px;
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 0px;
+    background-color: #D9D9D9;
+}
+
+.categoryTag_input:hover{
+    border-color: none;
+ }
+
+.errorDiv{
+    width: 100%;
+    font-size: 20px;
+}
+
+.errorDiv b{
+    font-size: 20px;
+    color: red;
+}
+
+.submitBtn{
+    display: block;
+    margin: 15px auto;
+    width: 595px;
+    height: 45px;
+    border-radius: 0px;
+    border: none;
+    font-weight: bold;
+}
+
+.select{
+    display: flex;
+    width:100%;
+    height:100%;
+    justify-content: center;
+    align-items: center;
+}
+.select select{
+    width:30%;
+    height:50px;
+    margin-right: 3%;
+    font-size: 20px;
+    background-color: #D9D9D9;
+    border: none;
+}
+
+.select option{
+    background-color: white;
+}

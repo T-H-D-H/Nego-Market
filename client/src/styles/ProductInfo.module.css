@@ -189,5 +189,13 @@
 
   .reply{
     flex-basis: 100%;
-    display: flex;
+    display: block;
+  }
+
+  .ownerAction{
+    float: right;
+  }
+
+  .ownerAction span{
+    cursor: pointer;
   }

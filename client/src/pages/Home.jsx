@@ -233,8 +233,8 @@ export default function Home() {
 											{content.region}
 										</div>
 										<div className={style.product_count}>
-											<span>관심 {content.good}</span> ∙{" "}
-											<span>채팅 {content.chat}</span>
+											<span>관심 {content.like_count}</span> ∙{" "}
+											<span>채팅 {content.comment_count}</span>
 										</div>
 									</div>
 								</Link>

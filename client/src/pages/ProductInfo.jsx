@@ -14,6 +14,7 @@ import { useParams } from "react-router-dom";
 export default function UploadProduct(props) {
 	const port = process.env.REACT_APP_PORT;
 	const { id } = useParams();
+	const token = JSON.parse(sessionStorage.getItem("token"));
 	// 파라미터로 상품 ID 가져와야함.
 	const [productimg, setImg] = useState([]);
 	const [sellerinfo, setSellerInfo] = useState({});
@@ -47,7 +48,6 @@ export default function UploadProduct(props) {
 	};
 
 	const loadData = async () => {
-		const token = JSON.parse(sessionStorage.getItem("token"));
 		const productData = await fetch(port + "/api/product/" + id, {
 			method: "GET",
 			headers: {
@@ -66,6 +66,7 @@ export default function UploadProduct(props) {
 			nickname: result.nickname,
 			address: result.addressName,
 		});
+		setLike(result.hasReqUserLiked);
 		console.log(result);
 	};
 
@@ -106,12 +107,35 @@ export default function UploadProduct(props) {
 		// TODO: 상품 API에서 로그인 유저의 좋아요 상태 가져옴
 		const handleLike = async () => {
 			const token = JSON.parse(sessionStorage.getItem("token"));
+			if(!token){
+				alert("로그인이 필요합니다.");
+				return;
+			}
+			const data = JSON.stringify({"productId":id})
 			if (productLike) {
 				// 로그인한 사람이 선택한 상품의 좋아요가 사라지는 API
 				setLike(false);
+				const res = await fetch(port + "/api/like", {
+					method: "DELETE",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: "Bearer " + token,
+					},
+					body: data,
+				});
+
+				
 			} else {
 				// 로그인한 사람이 선택한 상품을 좋아요에 등록하는 API
 				setLike(true);
+				const res = await fetch(port + "/api/like", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: "Bearer " + token,
+					},
+					body: data,
+				});
 			}
 			const likeData = await fetch(port + "/api/product/" + id, {
 				// 로그인한 사람이 좋아요를 했는지 확인하는 API로 정보 가져오기
@@ -176,8 +200,6 @@ export default function UploadProduct(props) {
 
 	const Tags = () => {
 		const datas = tags;
-		// const datas = ["태그1","태그1","태그1","태그1","태그1","태그1","태그1","태그1","태그1","태그1",]
-
 		const TagBox = (tag) => {
 			return (
 				<div className={style.tagBox} key={tag}>
@@ -258,7 +280,7 @@ export default function UploadProduct(props) {
 
 		const handleSubmit = async (event) => {
 			event.preventDefault();
-			const token = JSON.parse(sessionStorage.getItem("token"));
+			
 			if(!token){
 				alert("로그인이 필요한 서비스 입니다.");
 			return;}
@@ -294,6 +316,7 @@ export default function UploadProduct(props) {
 		};
 
 		
+
 		const showReply = (id) => {
 			console.log("show Reply 동작")
 			setSelectedId(id);
@@ -301,7 +324,19 @@ export default function UploadProduct(props) {
 
 		const Replies = (props) => {
 			const data = props.data;
-			const pId = props.id;
+			console.log(data);
+
+			const deleteComment = async()=>{
+				await fetch(port + "/api/comment/delete/"+data.id, {
+					// 로그인한 사람이 좋아요를 했는지 확인하는 API로 정보 가져오기
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: "Bearer " + token,
+					},
+				})
+			}
+
 			return (<>
 			<div className={style.reply} style={{ marginLeft: "10px" }}>
 					<span className={style.comment_author}>
@@ -309,6 +344,13 @@ export default function UploadProduct(props) {
 					{ data.nickname}
 					</span>
 					<span className={style.comment_text}>{data.comment}</span>
+					{
+						// 로그인한 사람과 작성자의 일치여부 확인 후 맞다면 보이게 하기
+					}
+					<span className={style.ownerAction}>
+						<span>수정</span>
+						 / <span onClick={()=>{deleteComment()}}>삭제</span> 
+					</span>
 				</div>
 			</>
 				
