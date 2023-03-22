@@ -195,7 +195,7 @@ export default function UploadProduct(props) {
 	};
 
 	const ProductArticle = () => {
-		return <div className={style.articleDiv}>{article}</div>;
+		return <div className={style.articleDiv}><pre>{article}</pre></div>;
 	};
 
 	const Tags = () => {
