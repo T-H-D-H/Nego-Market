@@ -256,6 +256,7 @@ export default function SignUp() {
 				<div className={style.categoryTag}>
 					<span>비밀번호</span>
 					<input
+						type="password"
 						placeholder="비밀번호"
 						onBlur={pwCheck}
 						className={style.categoryTag_input}
@@ -270,6 +271,7 @@ export default function SignUp() {
 				<div className={style.categoryTag}>
 					<span>비밀번호 확인</span>
 					<input
+						type="password"
 						placeholder="비밀번호확인"
 						onBlur={pwconfirmCheck}
 						className={style.categoryTag_input}
