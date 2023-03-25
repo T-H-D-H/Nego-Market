@@ -100,6 +100,7 @@ export default function UploadProduct() {
 				<input
 					type="text"
 					placeholder="제목"
+					className={style.input}
 					onChange={(e) => {
 						setProductTitle(e.target.value);
 					}}
@@ -118,6 +119,7 @@ export default function UploadProduct() {
 				></textarea>
 				<div className={style.formTitle}>가격</div>
 				<input
+				className={style.input}
 					type="number"
 					placeholder="가격을 제시해 주세요."
 					onChange={(e) => {
@@ -128,6 +130,7 @@ export default function UploadProduct() {
 				<div className={style.formTitle}>사진</div>
 
 				<input
+				
 					type="file"
 					id="imageFile"
 					className={style.fileInput}
@@ -187,6 +190,7 @@ export default function UploadProduct() {
 
 				<div className={style.formTitle}>태그</div>
 				<input
+				className={style.input}
 					type="text"
 					placeholder="태그는 필수 항목입니다. 그리고 띄워쓰기로 구분됩니다. 작성시 주의해 주세요."
 					onChange={(e) => {

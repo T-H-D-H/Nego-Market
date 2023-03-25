@@ -83,6 +83,10 @@ export default function UploadProduct(props) {
 			setCurrentIndex((currentIndex + 1) % productimg.length);
 		};
 		return (
+		<>
+		<div style={{textAlign:"right"}}>
+			<button className={style.productDeleteBtn}>삭제하기</button>
+		</div>
 			<div className={style.picDiv}>
 				<FontAwesomeIcon
 					icon={faArrowLeft}
@@ -100,6 +104,8 @@ export default function UploadProduct(props) {
 					className={style.arrowIcon}
 				/>
 			</div>
+		</>
+			
 		);
 	};
 
@@ -164,6 +170,9 @@ export default function UploadProduct(props) {
 						onClick={handleLike}
 					/>
 				)}
+				<div style={{textAlign:"right",fontWeight:"bold"}}>
+					{productPrice}원
+				</div>
 			</div>
 		);
 	};
@@ -239,7 +248,6 @@ export default function UploadProduct(props) {
 
 		const handleReplySubmit = async (event) => {
 			event.preventDefault();
-			console.log(newReply)
 			const token = JSON.parse(sessionStorage.getItem("token"));
 			if(!token){
 				alert("로그인이 필요한 서비스 입니다.");
@@ -287,7 +295,6 @@ export default function UploadProduct(props) {
 			if (newComment.content.trim() !== "") {
 				const data = JSON.stringify(newComment);
 				const res = await fetch(port + "/api/comment", {
-					// 로그인한 사람이 좋아요를 했는지 확인하는 API로 정보 가져오기
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json",
@@ -322,19 +329,55 @@ export default function UploadProduct(props) {
 			setSelectedId(id);
 		};
 
+
+		const [modifyId,setModifyId] = useState();
+		const [modifyData,setModifyData] =useState({
+			comment_id:null,
+			updated_comment:""
+		});
+
+		
+
+		const handleModifyMsg = (e)=>{
+			console.log(e.target.value);
+			setModifyData({...modifyData,updated_comment:e.target.value})
+		}
+
 		const Replies = (props) => {
 			const data = props.data;
 			console.log(data);
 
+			const modifyComment = async()=>{
+				setModifyId(data.id);
+			}
+
 			const deleteComment = async()=>{
 				await fetch(port + "/api/comment/delete/"+data.id, {
-					// 로그인한 사람이 좋아요를 했는지 확인하는 API로 정보 가져오기
-					method: "POST",
+					method: "PATCH",
 					headers: {
 						"Content-Type": "application/json",
 						Authorization: "Bearer " + token,
 					},
 				})
+
+				loadComments();
+			}
+
+			
+
+			const modifySubmit =async(event)=>{
+				event.preventDefault();
+				const data = JSON.stringify(modifyData)
+				const res = await fetch(port + "/api/comment", {
+					method: "PATCH",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: "Bearer " + token,
+					},
+					body:data,
+				})
+				const result = await res.json();
+				console.log("result",result)
 			}
 
 			return (<>
@@ -344,13 +387,18 @@ export default function UploadProduct(props) {
 					{ data.nickname}
 					</span>
 					<span className={style.comment_text}>{data.comment}</span>
-					{
-						// 로그인한 사람과 작성자의 일치여부 확인 후 맞다면 보이게 하기
-					}
 					<span className={style.ownerAction}>
-						<span>수정</span>
+						<span onClick={()=>{modifyComment()}}>수정</span>
 						 / <span onClick={()=>{deleteComment()}}>삭제</span> 
 					</span>
+					<div style={{display: modifyId==data.id?"block":"none"}}>
+						<form onSubmit={modifySubmit}>
+						<input type="text" placeholder="Comment..." onChange={handleModifyMsg}/>
+						
+						<input type="submit" value="수정하기" className={style.modifyBtn} />
+						</form>
+						
+					</div>
 				</div>
 			</>
 				

@@ -14,11 +14,11 @@
 
 
 /* ------------------- 입력 영역 관련 태그 --------------*/
-input:hover{
+.input:hover{
    border-color: deepskyblue;
 }
 /* 모든 인풋들은 둥근 모서리와 하얀테두리를 가짐 */
-input{
+.input{
    padding: 8px;
    border: 1px solid #D9D9D9;
    border-radius: 10px;
